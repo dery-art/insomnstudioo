@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>- Insomn Studio</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      /* Reset dan global */
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        color: #013967;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+      body > *:not(footer) {
+        flex-shrink: 0;
+      }
+      main {
+        flex-grow: 1;
+      }
+
+      /* Container artikel */
+      main.article-content {
+        max-width: 900px;
+        margin: 40px auto 80px;
+        padding: 0 20px;
+        line-height: 1.6;
+        position: relative;
+        z-index: 1;
+      }
+
+      /* Cover Image besar di atas */
+      .article-cover {
+        width: 100%;
+        height: 400px;
+        border-radius: 14px;
+        overflow: hidden;
+        box-shadow: 0 6px 20px rgba(1, 57, 103, 0.15);
+        margin-bottom: 30px;
+      }
+      .article-cover img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      /* Styling isi artikel */
+      main.article-content h1 {
+        font-size: 2.4rem;
+        margin-bottom: 8px;
+      }
+      main.article-content .date {
+        color: #666;
+        font-style: italic;
+        margin-bottom: 25px;
+        font-size: 1rem;
+      }
+      main.article-content p {
+        font-size: 1.15rem;
+        margin-bottom: 18px;
+      }
+
+      /* Tombol kembali */
+      main.article-content a.back-btn {
+        display: inline-block;
+        background-color: #013967;
+        color: #fff;
+        padding: 12px 25px;
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: 600;
+        box-shadow: 0 4px 10px rgba(1, 57, 103, 0.4);
+        transition: background-color 0.3s ease;
+        margin-top: 30px;
+      }
+      main.article-content a.back-btn:hover {
+        background-color: #005494;
+      }
+
+      /* FOOTER sticky di bawah */
+      footer {
+        background-color: #013967;
+        color: white;
+        padding: 25px 0;
+        text-align: center;
+        margin-top: auto;
+        flex-shrink: 0;
+      }
+      .footer-container {
+        max-width: 1200px;
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        gap: 15px;
+        padding: 0 15px;
+      }
+      .footer-logo {
+        font-size: 1.6rem;
+        font-weight: 700;
+      }
+      .footer-social a {
+        margin-left: 15px;
+        display: inline-block;
+      }
+      .footer-social img {
+        width: 26px;
+        height: 26px;
+        filter: brightness(0) invert(1);
+        transition: filter 0.3s ease;
+      }
+      .footer-social a:hover img {
+        filter: brightness(0.7) invert(1);
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        main.article-content {
+          margin: 30px 15px 60px;
+        }
+      }
+
+      /* Header fix & styling */
+      header {
+        background-color: white;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 100;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        padding: 0 20px;
+      }
+      .nav-container {
+        max-width: 1200px;
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .logo {
+        display: flex;
+        align-items: center;
+        font-weight: 700;
+        color: #013967;
+        font-size: 1.3rem;
+      }
+      .logo-icon {
+        width: 35px;
+        height: 35px;
+        margin-right: 8px;
+      }
+      nav ul {
+        list-style: none;
+        display: flex;
+        gap: 25px;
+        margin: 0;
+        padding: 0;
+      }
+      nav ul li a {
+        text-decoration: none;
+        color: #013967;
+        font-weight: 600;
+        transition: color 0.3s ease;
+      }
+      nav ul li a:hover {
+        color: #005494;
+      }
+
+      /* Tambah padding top ke main agar tidak tertutup header */
+      body > main.article-content {
+        padding-top: 80px;
+      }
+    </style>
+  </head>
+  <body class="artikel-page">
+    <!-- HEADER -->
+    <header>
+      <div class="container nav-container">
+        <div class="logo">
+          <img
+            src="aset/Untitled design (64).png"
+            alt="Logo Icon"
+            class="logo-icon"
+          />
+        </div>
+        <nav>
+          <nav>
+            <ul class="nav-links">
+              <li>
+                <a
+                  href="index.html#about"
+                  style="color: #005494; font-weight: 600"
+                  >About</a
+                >
+              </li>
+              <li>
+                <a
+                  href="index.html#artikel"
+                  style="color: #005494; font-weight: 600"
+                  >Artikel</a
+                >
+              </li>
+              <li>
+                <a
+                  href="index.html#portfolio"
+                  style="color: #005494; font-weight: 600"
+                  >Portfolio</a
+                >
+              </li>
+              <li>
+                <a
+                  href="index.html#kontak"
+                  style="color: #005494; font-weight: 600"
+                  >Hubungi Kami</a
+                >
+              </li>
+            </ul>
+          </nav>
+        </nav>
+      </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="article-content container" role="main">
+      <!-- Cover Image besar di atas -->
+      <div class="article-cover" aria-label="Gambar Cover Artikel">
+        <img src="aset/brand.jpg" alt="Social Media Marketing Illustration" />
+      </div>
+
+      <!-- Judul artikel -->
+      <h1>
+        Pentingnya Identitas Visual dalam Membangun Kepercayaan Pelanggan di Era
+        Digital
+      </h1>
+      <p class="date">19 Mei 2025</p>
+
+      <p>
+        Di era digital yang serba cepat dan kompetitif, pelanggan tidak lagi
+        hanya mempertimbangkan kualitas produk atau jasa saat mengambil
+        keputusan. Mereka juga mempertimbangkan bagaimana sebuah brand
+        menyampaikan nilai, emosi, dan profesionalismenya melalui tampilan
+        visual. Identitas visual kini menjadi wajah pertama dari sebuah bisnis —
+        bahkan sebelum pelanggan berinteraksi langsung dengan produk atau
+        layanan Anda. Identitas visual mencakup berbagai elemen penting, mulai
+        dari logo, warna, tipografi, ikonografi, hingga konsistensi dalam layout
+        media sosial dan desain website. Semuanya membentuk kesan pertama yang
+        sangat menentukan apakah pelanggan merasa percaya dan tertarik untuk
+        melanjutkan interaksi dengan brand Anda atau tidak. Sebuah desain visual
+        yang rapi, profesional, dan konsisten mampu menanamkan persepsi bahwa
+        bisnis Anda kredibel, serius, dan dapat diandalkan.
+      </p>
+      <p>
+        Menurut sejumlah riset, 90% kesan pertama terhadap sebuah brand
+        ditentukan oleh aspek visual. Itu artinya, hanya dalam beberapa detik
+        pertama, audiens sudah membentuk opini terhadap bisnis Anda berdasarkan
+        desain yang mereka lihat. Maka dari itu, membangun identitas visual yang
+        kuat bukan lagi sekadar pilihan, tapi sebuah keharusan. Beberapa
+        komponen utama yang perlu dimiliki oleh sebuah brand untuk tampil
+        menonjol dan dipercaya di era digital saat ini meliputi: Logo yang kuat
+        dan mudah dikenali, yang mencerminkan nilai dan karakter unik brand.
+        Skema warna dan tipografi yang konsisten, baik di media sosial, materi
+        promosi, maupun produk digital. Estetika media sosial yang terkurasi
+        dengan baik, agar audiens dapat merasakan konsistensi dan
+        profesionalisme dalam setiap unggahan. Website yang responsif, cepat,
+        dan user-friendly, karena situs web adalah representasi digital utama
+        dari bisnis Anda.
+      </p>
+      <p>
+        Di Insomn Studio, kami percaya bahwa visual yang baik tidak hanya soal
+        estetika, tetapi juga soal strategi komunikasi. Kami membantu klien kami
+        membangun identitas visual yang tidak hanya memikat secara tampilan,
+        tapi juga mencerminkan visi, misi, dan nilai-nilai bisnis mereka. Dengan
+        pendekatan yang kolaboratif, kami merancang elemen-elemen visual yang
+        menyatu dalam satu narasi brand yang kuat dan mudah diingat oleh
+        audiens. Melalui pengalaman kami dalam menangani berbagai proyek
+        branding dan digital marketing, kami menyadari bahwa desain yang tepat
+        dapat menjadi alat yang sangat efektif untuk membangun kepercayaan,
+        meningkatkan keterlibatan, dan pada akhirnya mendorong konversi. Brand
+        yang memiliki identitas visual yang solid akan lebih mudah menanamkan
+        loyalitas di benak pelanggannya — karena mereka tahu, mereka tidak hanya
+        membeli produk, tapi juga menjadi bagian dari cerita yang lebih besar.
+        Jadi, jika Anda merasa brand Anda belum memiliki identitas visual yang
+        kuat dan terarah, sekarang adalah waktu yang tepat untuk memulainya.
+        Insomn Studio siap menjadi mitra Anda dalam menciptakan tampilan visual
+        yang tidak hanya menawan, tapi juga berdampak nyata bagi pertumbuhan
+        bisnis Anda.
+      </p>
+
+      <a
+        href="index.html#artikel"
+        class="back-btn"
+        aria-label="Kembali ke halaman artikel utama"
+        >← Kembali ke Beranda</a
+      >
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="container footer-container">
+        <div class="footer-logo">Insomn Studio</div>
+        <p>© 2025 Insomn Studio. All rights reserved.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram"
+            ><img
+              src="https://cdn-icons-png.flaticon.com/512/174/174855.png"
+              alt="Instagram"
+          /></a>
+          <a href="#" aria-label="Facebook"
+            ><img src="aset/Facebook-White-Logo-PNG-Pic.png" alt="Facebook"
+          /></a>
+          <a href="#" aria-label="Twitter"
+            ><img src="aset/X_logo_2023_(white).png" alt="Twitter"
+          /></a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
