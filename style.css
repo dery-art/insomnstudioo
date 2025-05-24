@@ -463,3 +463,41 @@ footer {
   width: 150px;
   height: 150px;
 }
+
+.visi-misi {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.visi,
+.misi {
+  flex: 1 1 400px;
+  text-align: center;
+}
+
+.visi h3,
+.misi h3 {
+  color: #013967;
+  margin: 15px 0 10px;
+}
+
+.visi p,
+.misi li {
+  color: #555;
+  font-size: 1.05rem;
+}
+
+.misi ul {
+  padding-left: 20px;
+  list-style-type: disc;
+  text-align: left;
+}
+
+.icon-visimisi {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 10px;
+}
